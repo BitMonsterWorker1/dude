@@ -1,0 +1,10 @@
+.content
+ %small= @trump.user.email
+ %h1=  @trump.title
+ %p=  @trump.body
+ %br
+ %small= link_to "Back", root_path
+
+ - if current_user == @trump.user
+  %small= link_to "Edit", edit_trump_path
+  %small= link_to "Delete", @trump, method: :delete, data: {confirm: "Are you sure?"}

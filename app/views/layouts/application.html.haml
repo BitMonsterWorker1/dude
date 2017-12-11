@@ -1,0 +1,21 @@
+!!! 5
+%head
+%title Trumpler
+= csrf_meta_tags
+= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+%body
+ %nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+  .navbar-brand= link_to "Trumps Dumps", root_path
+  %ul.nav.navbar-nav.navbar-right
+   %li= link_to "New Dump", new_trump_path
+   %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+   %li= link_to "Sign In", user_session_path
+
+- if notice
+ = notice
+- if alert
+ = alert
+.container
+ = yield

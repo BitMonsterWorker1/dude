@@ -1,0 +1,7 @@
+%h1 Here are all your dumps:
+- @trumps.each do |trump|
+ .trump
+  %h1= link_to trump.title, trump
+  %small
+   Created by:
+   = trump.user.email
